@@ -150,3 +150,176 @@
 
 // student1.displayInfo();
 // student2.displayInfo();
+
+// class Animal {
+//     constructor(name) {
+//       this.name = name;
+//     }
+  
+//     eat() {
+//       console.log(`${this.name} sedang makan`);
+//     }
+//   }
+  
+//   class Cat extends Animal {
+//     meow() {
+//       console.log(`${this.name} mengeong`);
+//     }
+//   }
+  
+  
+//   const kucing = new Cat("Tom");
+  
+  
+//   kucing.eat();
+//   kucing.meow();
+
+// class Animal {
+//     constructor(name) {
+//       this.name = name;
+//     }
+  
+//     eat() {
+//       console.log(`${this.name} sedang makan`);
+//     }
+//   }
+  
+//   class Dog extends Animal {
+//     meow() {
+//       console.log(`${this.name} menggonggong`);
+//     }
+//   }
+  
+  
+//   const anjing = new Dog("Tom");
+  
+  
+//   anjing.eat();
+//   anjing.meow();
+
+// class Employee {
+//     constructor(name, position, salary) {
+//         this.name = name;
+//         this.position = position;
+//         this.salary = salary;
+//     }
+// }
+
+// class Manager extends Employee {
+//     constructor(name, position, salary, department) {
+//         super(name, position, salary);
+//         this.department = department;
+//     }
+
+//     lead() {
+//         console.log(`${this.name} memimpin departemen ${this.department}.`);
+//     }
+
+//     showAll() {
+//         console.log("Nama:", this.name);
+//         console.log("Jabatan:", this.position);
+//         console.log("Gaji:", this.salary);
+//         console.log("Departemen:", this.department);
+//     }
+// }
+
+// // Contoh penggunaan
+// const manager = new Manager("Andi", "Manager", 15000000, "IT");
+
+// manager.lead();
+// manager.showAll();
+
+// class BankAccount {
+//     constructor() {
+//         this._balance = 0;
+//     }
+
+//     deposit(amount) {
+//         this._balance += amount;
+//     }
+
+//     showBalance() {
+//         console.log(`Saldo saat ini: ${this._balance}`);
+//     }
+// }
+
+// const akun = new BankAccount();
+// akun.deposit(500000);
+// akun.showBalance();
+
+// akun._balance = 9999999;
+// akun.showBalance();
+
+// class SecureAccount {
+//     #balance = 0;
+
+//     deposit(amount) {
+//         this.#balance += amount;
+//     }
+
+//     showBalance() {
+//         console.log(`Saldo aman: ${this.#balance}`);
+//     }
+// }
+
+// const akun = new SecureAccount();
+// akun.deposit(500);
+// akun.#balance = 9999;
+// akun.showBalance();
+  
+//   class Message {
+//     send() {
+//       console.log("Mengirim pesan umum.");
+//     }
+//   }
+  
+//   class Email extends Message {
+//     send() {
+//       console.log("Mengirim email ke pengguna.");
+//     }
+//   }
+  
+//   class SMS extends Message {
+//     send() {
+//       console.log("Mengirim SMS ke nomor penerima.");
+//     }
+//   }
+  
+//   const pesan1 = new Message();
+//   const pesan2 = new Email();
+//   const pesan3 = new SMS();
+  
+//   pesan1.send();
+//   pesan2.send();
+//   pesan3.send();
+
+class Account {
+    #balance = 0;
+
+    deposit(amount) {
+        this.#balance += amount;
+    }
+
+    getBalance() {
+        return this.#balance;
+    }
+
+    showBalance() {
+        console.log(`Saldo anda adalah: ${this.#balance}`);
+    }
+}
+
+class PremiumAccount extends Account {
+    showBalance() {
+        console.log(`Saldo anda adalah: ${this.getBalance()} | Akun Premium`);
+    }
+}
+
+// Contoh penggunaan
+const akunBiasa = new Account();
+akunBiasa.deposit(1000);
+akunBiasa.showBalance(); // Saldo anda adalah: 1000
+
+const akunPremium = new PremiumAccount();
+akunPremium.deposit(5000);
+akunPremium.showBalance(); // Saldo anda adalah: 5000 | Akun Premium
